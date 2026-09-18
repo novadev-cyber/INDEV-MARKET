@@ -1,70 +1,207 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IntDev8 Market</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f4f6;
-      margin: 0;
-      padding: 20px;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    header {
-      background: #111827;
-      color: white;
-      padding: 20px;
-      border-radius: 15px;
-      text-align: center;
-    }
+<title>INDEV MARKET</title>
 
-    .game {
-      background: white;
-      margin-top: 15px;
-      padding: 20px;
-      border-radius: 12px;
-      cursor: pointer;
-    }
+<style>
+* {
+  box-sizing: border-box;
+}
 
-    button {
-      background: #2563eb;
-      color: white;
-      border: none;
-      padding: 12px;
-      border-radius: 8px;
-    }
-  </style>
+body {
+  margin: 0;
+  padding: 16px;
+  font-family: Arial, sans-serif;
+  background: #f3f5f9;
+  color: #111827;
+}
+
+.header {
+  background: linear-gradient(135deg, #061426, #142d4c);
+  color: white;
+  padding: 24px 18px;
+  border-radius: 20px;
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.header h1 {
+  font-size: 30px;
+  margin: 0 0 12px;
+  letter-spacing: 1px;
+}
+
+.header h1 span {
+  color: #1683ff;
+}
+
+.header p {
+  margin: 0 0 20px;
+  color: #d7e3f3;
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  gap: 8px;
+  font-size: 11px;
+}
+
+.features div {
+  flex: 1;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.game-card {
+  background: white;
+  border-radius: 17px;
+  padding: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+}
+
+.game-icon {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 52px;
+  margin-bottom: 12px;
+  background: #e8eef8;
+}
+
+.freefire {
+  background: linear-gradient(135deg, #35100b, #e94b1c);
+}
+
+.ml {
+  background: linear-gradient(135deg, #102e77, #37a5ff);
+}
+
+.pubg {
+  background: linear-gradient(135deg, #172d46, #6899c5);
+}
+
+.magic {
+  background: linear-gradient(135deg, #27216c, #a38cff);
+}
+
+.game-card h2 {
+  font-size: 17px;
+  margin: 0 0 8px;
+}
+
+.game-card p {
+  font-size: 12px;
+  color: #64748b;
+  margin: 0 0 15px;
+  min-height: 30px;
+}
+
+.game-card button {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 4px;
+  background: #176df5;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.game-card button:active {
+  transform: scale(0.97);
+}
+
+.footer {
+  text-align: center;
+  margin: 25px 0 10px;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+@media (min-width: 700px) {
+  .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  body {
+    max-width: 1100px;
+    margin: auto;
+  }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <h1>IntDev8 Market</h1>
-    <p>Top Up Game Cepat & Mudah</p>
-  </header>
 
-  <div class="game">
-    <h2>🔥 Free Fire</h2>
+<header class="header">
+  <h1>INDEV <span>MARKET</span></h1>
+  <p>Top Up Game Cepat & Mudah</p>
+
+  <div class="features">
+    <div>⚡<br>Proses Cepat</div>
+    <div>🛡️<br>Aman 100%</div>
+    <div>🎧<br>Support</div>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="game-card">
+    <div class="game-icon freefire">🔥</div>
+    <h2>Free Fire</h2>
     <p>Top Up Diamond Free Fire</p>
-    <button>Top Up</button>
+    <button onclick="bukaGame('Free Fire')">Top Up →</button>
   </div>
 
-  <div class="game">
-    <h2>⚔️ Mobile Legends</h2>
+  <div class="game-card">
+    <div class="game-icon ml">⚔️</div>
+    <h2>Mobile Legends</h2>
     <p>Top Up Diamond MLBB</p>
-    <button>Top Up</button>
+    <button onclick="bukaGame('Mobile Legends')">Top Up →</button>
   </div>
 
-  <div class="game">
-    <h2>🎯 PUBG Mobile</h2>
+  <div class="game-card">
+    <div class="game-icon pubg">🎯</div>
+    <h2>PUBG Mobile</h2>
     <p>Top Up UC PUBG Mobile</p>
-    <button>Top Up</button>
+    <button onclick="bukaGame('PUBG Mobile')">Top Up →</button>
   </div>
 
-  <div class="game">
-    <h2>👑 Magic Chess</h2>
+  <div class="game-card">
+    <div class="game-icon magic">👑</div>
+    <h2>Magic Chess</h2>
     <p>Top Up Diamond Magic Chess</p>
-    <button>Top Up</button>
+    <button onclick="bukaGame('Magic Chess')">Top Up →</button>
   </div>
+
+</main>
+
+<footer class="footer">
+  © 2026 INDEV MARKET
+</footer>
+
+<script>
+function bukaGame(namaGame) {
+  alert(
+    "Kamu memilih " + namaGame +
+    "\\nHalaman top up akan segera dibuat."
+  );
+}
+</script>
+
 </body>
-</html>
+    </html>
